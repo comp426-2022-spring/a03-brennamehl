@@ -15,7 +15,7 @@ const server = app.listen(port, () => {
 //multiple flips endpoint
 app.get("/app/flips/:number", (req, res) =>{
     let flipsArr = coinFlips(req.params.number);
-    res.status(200).json({ "raw" : flipsArr }, {"summary": countFlips(flipsArr)})
+    res.status(200).json({ "raw" : flipsArr , "summary": countFlips(flipsArr)})
     res.type("text/plain")
 })  
 
